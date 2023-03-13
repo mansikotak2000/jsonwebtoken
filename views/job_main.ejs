@@ -1,0 +1,329 @@
+<html>
+<h1>JOB APPLICATION</h1>
+
+
+<body>
+    <form method="post" action="/submit">
+        <div id="personal_info">
+
+            <fieldset>
+                <legend class="l1">Basic info</legend>
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" name="fname" id="1"></td>
+                        <td>Last Name:</td>
+                        <td><input type="text" name="lname" id="2"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Designation:</td>
+                        <td><input type="text" name="designation" id="3"></td>
+                        <td>Address</td>
+                        <td><textarea name="txt" id="4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>email:</td>
+                        <td><input type="email" name="email" id="5"></td>
+                        <td>City:</td>
+                        <td>
+                            <select name="city" id="city">
+                            </select>
+                        </td>
+                        <td>State:</td>
+
+                        <td>
+                            <select name="state" id="state_id" onchange="fetchCity(this)">
+                            <% for(const x of state) { %>
+                                <option value='<%=x.state_id %>'><%=x.name %></option>
+                        <%}%>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td><input type="number" name="Number" id="7"></td>
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td>Gender:</td>
+                        <td><input type="radio" id="Male" name="Gender" value="Male">Male
+                            <input type="radio" id="Female" name="Gender" value="female">Female
+                            <input type="radio" id="Other" name="Gender" value="Other">Other
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>Relationship Status:</td>
+                        <td><input type="radio" id="Married" name="Status" value="Married">Married
+                            <input type="radio" id="UnMarried" name="Status" value="UnMarried">UnMarried</td>
+
+
+                    </tr>
+
+                </table>
+            </fieldset>
+        </div>
+        <div id="education info">
+            <fieldset>
+                <legend class="l1">Education Details</legend>
+                <table id="edb">
+
+
+                    <tr>
+                        <td class="edu">COURSE</td>
+                        <td><input type="button" value="ADD +" id="cb" onclick="clickevent1()"></td>
+
+                    </tr>
+
+                    <tr id="c1">
+                        <td>COURSE:</td>
+                        <td>
+                            <select name="course">
+                                <%for(const x of course){%>
+                                    <option><%=x.oname %></option>
+                                <%}%>
+                            </select>
+                        </td>
+
+                        <td class="course">Board/University:</td>
+                        <td><input type="textbox" name="un" id="un"></td>
+                        <td class="course">Passing Year:</td>
+                        <td><input type="textbox" name="bpy" id="bpy"></td>
+                        <td class="course">Percentage:</td>
+                        <td><input type="textbox" name="bper" id="bper"></td>
+
+                    </tr>
+
+                </table>
+
+            </fieldset>
+        </div>
+        <div id="work experience">
+            <fieldset>
+                <legend class="l1">Work Experience</legend>
+                <table id="we">
+                    <tr>
+                        <td>MORE:</td>
+                        <td><input type="button" value="ADD +" id="more" onclick="clickevent2()"></td>
+                    </tr>
+                    <tr id="company">
+                        <td>Company Name:</td>
+                        <td><input type="textbox" name="cname2" id="cname2"></td>
+
+                        <td>Designation:</td>
+                        <td><input type="textbox" name="dname2" id="dname2"></td>
+
+                        <td>From:</td>
+                        <td><input type="date" name="from"></td>
+                        <td>To:</td>
+                        <td><input type="date" name="to"></td>
+
+                    </tr>
+
+
+                </table>
+            </fieldset>
+
+        </div>
+        <div id="technologies">
+            <fieldset>
+                <legend class="l1">Technologies you know</legend>
+                <table>
+
+                    <% for(const x of teches){%>
+                        <tr>
+                            <td><input type="checkbox" name="ck_tech" value="<%= x.oname%>">
+                                <%= x.oname%>
+                            </td>
+                            <td><input type="radio" name='<%= x.oname%>' value="Beginner"> Beginner
+                            </td>
+                            <td><input type="radio" name='<%= x.oname%>' value="Mideator"> Mideator
+                            </td>
+                            <td><input type="radio" name="<%= x.oname%>" value="Expert"> Expert
+                            </td>
+
+                        </tr>
+                        <%}%>
+                </table>
+        </div>
+        <div id="language">
+            <fieldset>
+                <legend class="l3">Languages Known</legend>
+                <table>
+                    <% for(const x of lang) { %>
+                        <td><input type="checkbox" name="chk_languages" value="<%=x.oname %>">
+                            <%=x.oname %>
+                        </td>
+                        <td>Read</td>
+                        <td><input type="checkbox" name="<%=x.oname %>" value="Read"></td>
+                        <td>Write</td>
+                        <td><input type="checkbox" name="<%=x.oname %>" value="write"></td>
+                        <td>Speak</td>
+                        <td><input type="checkbox" name="<%=x.oname %>" value="speak"></td>
+                        </tr>
+                        <%}%>
+                </table>
+        </div>
+        </fieldset>
+
+        </div>
+        <div id="reference">
+            <fieldset>
+                <legend class="l1">Reference Contact</legend>
+                <table>
+                    <tr>
+                        <td>Name1:</td>
+                        <td><input type="textbox" name="nm1" id="nm1"></td>
+                        <td>Contact Number:</td>
+                        <td><input type="textbox" name="cn1" id="cn1"></td>
+                        <td>Relation:</td>
+                        <td><input type="textbox" name="r1" id="r1"></td>
+
+                    </tr>
+                    <tr>
+                        <td>Name2:</td>
+                        <td><input type="textbox" name="nm2" id="nm2"></td>
+                        <td>Contact Number:</td>
+                        <td><input type="textbox" name="cn2" id="cn2"></td>
+                        <td>Relation:</td>
+                        <td><input type="textbox" name="r2" id="r2"></td>
+
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <div id="preference">
+            <fieldset>
+                <legend class="l1">Preferences</legend>
+                <table>
+                    <tr>
+                        <td>Notice Period:</td>
+                        <td><input type="textbox" name="np" id="np"></td>
+                        <td>Preferred Location:</td>
+                        <td>
+                            <select name="pref_location">
+                                        <% for(const x of pref_location) { %>
+                                        <option><%=x.oname%> </option>
+                                            <% } %>
+                                        </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Expected CTC:</td>
+                        <td><input type="textbox" name="ectc" id="ectc"></td>
+                        <td>Department:</td>
+                        <td>
+                            <select name="department">
+                                <% for(const x of department){%>
+                                    <option><%=x.oname%></option>
+
+                                <%}%>
+                            </select>
+                        </td>
+
+
+
+
+
+                    </tr>
+                    <tr>
+                        <td>Current CTC:</td>
+                        <td><input type="textbox" name="cctc" id="cctc"></td>
+                    </tr>
+
+                </table>
+
+            </fieldset>
+            <tr>
+                <td><input type="submit" value="submit"></td>
+
+            </tr>
+        </div>
+    </form>
+    <script>
+        function clickevent1() {
+            const mk = document.getElementById("c1");
+            const mk1 = mk.cloneNode(true);
+            document.getElementById("edb").appendChild(mk1);
+
+        }
+
+        function clickevent2() {
+            const mk = document.getElementById("company");
+            const mk1 = mk.cloneNode(true);
+            document.getElementById("we").appendChild(mk1);
+
+        }
+
+        function add_tech() {
+            let t1 = prompt("Enter Technology");
+            let content1 = ` <table>
+    <tr>
+        <td>${t1}</td>
+        <td><input type="checkbox" name="php" id="php"></td>
+
+        <td><input type="radio" name="beg1" id="beg1">Beginner
+            <input type="radio" name="beg1" id="beg2">Moderate
+            <input type="radio" name="beg1" id="beg3">Expert
+        </td>
+
+    </tr>
+
+</table>`;
+            let main_div2 = document.getElementById("tech_info");
+            let lang_div2 = document.createElement("div");
+            lang_div2.innerHTML = content1;
+            main_div2.appendChild(lang_div2);
+
+        }
+
+        function addLang() {
+            let name = prompt("Enter Language Name");
+            if (name == "") return;
+            let content = `<table>
+                <tr>
+                    <td>${name}</td>
+                    <td><input type="checkbox" name="ch" id="ch"></td>
+                    <td>Read</td>
+                    <td><input type="checkbox" name="ch" id="ch"></td>
+                    <td>Write</td>
+                    <td><input type="checkbox" name="ch" id="ch"></td>
+                    <td>Speak</td>
+                    <td><input type="checkbox" name="ch" id="ch"></td>
+                </tr>
+            </table>`;
+            let main_div = document.getElementById("lang_info");
+            let lang_div = document.createElement("div");
+            lang_div.innerHTML = content;
+            main_div.appendChild(lang_div);
+        }
+    </script>
+    <script>
+        let city = document.getElementById('city');
+        async function fetchCity(s_id) {
+
+            let name = s_id.value;
+            let url = `/test?state=${name}`;
+            let response = await fetch(url);
+            let data = await response.json();
+
+            city.innerHTML = '';
+            data.city.forEach(element => {
+
+                city.innerHTML += `<option value='${element.city_name}'> ${element.city_name}<option>`
+            });
+
+        }
+    </script>
+
+
+</body>
+
+</html>

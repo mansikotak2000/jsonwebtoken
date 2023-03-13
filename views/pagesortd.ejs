@@ -1,0 +1,43 @@
+<html>
+    <body>
+
+        <% let get_order = order %>
+        <% let old='id' %>
+        <table border="2">
+            <tr>
+                <th><a href="<%='/first?sort=id&&&old='+newsort+'&&order='+get_order%>">Id</a></th>
+                <th><a href="<%='/first?sort=fname&&old='+newsort+'&&order='+get_order%>">fname</a></th>
+                <th><a href="<%='/first?sort=lname&&old='+newsort+'&&order='+get_order%>">lname</a></th>
+
+            </tr>
+        <% for(const x of data){ %>
+            <tr>
+                <td>
+                    <%= x.id %>
+                </td>
+                <td>
+                    <%= x.fname %>
+                </td>
+                <td>
+                    <%= x.lname %>
+                </td>
+            </tr>   
+            <% } %>
+            <tr>
+      
+        <%  for(let i=1;i<=a+1;i++) { %>
+
+            <a href=<%='/first?no='+i+'&&sort='+sort%>>
+         
+                <%=i%>
+        
+        </a>
+        
+        <%}%>
+        </tr>
+        
+    </table>
+        
+    </body>    
+</html>
+

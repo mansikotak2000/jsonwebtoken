@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+    
+    .subcontainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 50px;
+    }
+    
+    .card {
+        border: 1px solid black;
+        height: 100px;
+        width: 33%;
+    }
+    
+    .text {
+        margin-top: 20px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .welcome {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .btn {
+        margin-left: 650px;
+        font-size: 20px;
+    }
+</style>
+
+
+<body>
+    <div>
+
+        <h1 class="welcome">
+            Welcome
+            <%= user.name %>
+        </h1>
+        <form method="post" action="/logout">
+            <input type="submit" value="LogOut" class="btn"></td>
+
+        </form>
+
+        <p class="text">YOUR PROJECTS</p>
+        <div class="container">
+
+            <div class="subcontainer">
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">TIC TAC TOE</h2>
+                        <a href="/tictac">TIC TAC TOE</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">COLOR CHANGE</h2>
+                        <a href="/colorchange">COLOR CHANGE</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">SORTING</h2>
+                        <a href="http://localhost:3100/first?sort='+sort+'&order='+order">SORTING</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">WEBSITE1</h2>
+                        <a href="/website1">WEBSITE1</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">PAGINATION</h2>
+                        <a href="http://localhost:3611/first">SORTING</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">JOb APPLICATION</h2>
+                        <a href="http://localhost:4009">JOb APPLICATION</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">SEARCHING</h2>
+                        <a href="http://localhost:3751/first">SEARCHING</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">WEBSITE2</h2>
+                        <a href="/website2">WEBSITE2</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+</body>
+
+</html>

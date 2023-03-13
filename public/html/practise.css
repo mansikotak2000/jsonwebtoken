@@ -1,0 +1,55 @@
+p.ex1 {
+    text-decoration-line: overline;
+    text-decoration-line: underline;
+    text-emphasis-style: bold;
+    text-size-adjust: initial;
+    text-decoration-thickness: initial;
+    font-weight: bold;
+    font-size: xx-large;
+    color: black;
+}
+
+p.ex3 {
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.img2 {
+    padding-left: 100px;
+}
+
+.btn {
+    float: left;
+    display: block;
+    color: blue;
+    border: 2px solid blue;
+    border-radius: 10px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.exg {
+    border: 1px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topnav label {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.btn2 {
+    background-color: dodgerblue;
+    font-size: medium;
+}

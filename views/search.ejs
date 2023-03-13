@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <form method="get" action="/first/searching">
+        <tr>
+            <td>For Search Use '^' for name, '$' for lname<br></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" name="txt" id="1"></td>
+            <td><input type="submit" name="sub"><br></td>
+        </tr>
+
+        <table border="2">
+           
+           
+           
+            <tr>
+                <th>id</th>
+                <th>firstname</th>
+                <th>lastname</th>
+            </tr>
+            
+        <% for(const x of data){ %>
+            <tr>
+                <td>
+                    <%= x.id %>
+                </td>
+                <td>
+                    <%= x.fname %>
+                </td>
+                <td>
+                    <%= x.lname %>
+                </td>
+            </tr>   
+            <% } %>
+           
+        
+    </table>
+</form>
+    </body>    
+</html>

@@ -1,0 +1,176 @@
+<html>
+    <head>
+        
+        <style>
+            table{
+                
+                height: 50%;
+                width: 30%;
+               }
+            td{
+                height: 70px;
+                width: 50px;
+                text-align: center;
+                font-size: 40px;
+            }
+            .center{
+                text-align: center;
+                color: aqua;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: xx-large;
+                transition-property: all;
+                float :inline-start;
+                
+            }
+            *{
+                text-align: center;
+            }
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        <p class="center">TIC TAC TOE</p>
+        <table border="1" align="center" id="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr><br>
+
+        </table>
+        <br><br>
+        <input type="button" name="reset" value="RESET" onclick="reset()">
+        <h1>player1: <span id="p1"></span> </h1>
+        <h1>player2: <span id="p2"></span> </h1>
+        <script>
+
+            let p1=prompt("enter player1 name");
+            let p2=prompt("enter player2 name");
+            document.getElementById("p1").innerText=localStorage.getItem(p1);
+            document.getElementById("p2").innerText=localStorage.getItem(p2);
+            var mk1=0;                
+            var counter=0;
+
+            var mk2="x";
+            var mk=document.querySelectorAll("td");
+            mk.forEach((td)=>{
+                td.addEventListener("click",()=>{
+                    if(td.innerHTML=="" && mk1==0)
+                    {
+                        td.innerHTML="x";
+                        mk1=1;
+                        check(mk2);
+                        mk2="0";
+
+                    }
+                    else if(td.innerHTML=="" && mk1==1)
+                    {
+                        td.innerHTML="0";
+                        mk1=0;
+                        check(mk2);
+                        mk2="x";
+                    }
+                });
+                
+            });
+            function check(mk2)
+            {
+               if(mk[0].innerHTML==mk2 && mk[1].innerHTML==mk2 && mk[2].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[3].innerHTML==mk2 && mk[4].innerHTML==mk2 && mk[5].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[6].innerHTML==mk2 && mk[7].innerHTML==mk2 && mk[8].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[0].innerHTML==mk2 && mk[4].innerHTML==mk2 && mk[8].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[2].innerHTML==mk2 && mk[4].innerHTML==mk2 && mk[6].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[1].innerHTML==mk2 && mk[4].innerHTML==mk2 && mk[7].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[0].innerHTML==mk2 && mk[3].innerHTML==mk2 && mk[6].innerHTML==mk2)
+                {
+                     alert(win(mk2));
+                }
+                if(mk[0].innerHTML!="" && mk[1].innerHTML!="" && mk[2].innerHTML!="" && mk[3].innerHTML!="" && mk[4].innerHTML!="" && mk[5].innerHTML!="" && mk[6].innerHTML!="" && mk[7].innerHTML!="" && mk[8].innerHTML!="")
+                {
+                    alert("draw");
+                }
+                
+
+            }
+            function win(mk2)
+            {
+                if(mk2=="x")
+                {
+                    setCounter(1,0);
+                    var p1_text=document.getElementById("p1");
+                    p1_text.innerText=localStorage.getItem(p1);
+                    return "player 1 wins";
+                }
+                {
+                    setCounter(0,1);
+                    var p2_text=document.getElementById("p1");
+                    p2_text.innerText=localStorage.getItem(p2);
+                    return "player 2 wins"
+                }
+            }
+            function reset()
+            {
+                mk[0].innerHTML='';
+                mk[1].innerHTML='';
+                mk[2].innerHTML='';
+                mk[3].innerHTML='';
+                mk[4].innerHTML='';
+                mk[5].innerHTML='';
+                mk[6].innerHTML='';
+                mk[7].innerHTML='';
+                mk[8].innerHTML='';
+            
+                if(mk2=="x")
+                {
+                    counter+=1;
+                    alert("player 1 wins:"+counter);
+                }
+                else{
+                    counter+=1;
+                     alert("palyer 2 wins:"+counter);
+                }
+            
+            }
+                
+            function setCounter(n1,n2){
+                let player1=Number.parseInt(localStorage.getItem(p1) ?? 0);
+                let player2=Number.parseInt(localStorage.getItem(p2) ?? 0);
+                localStorage.setItem(p1,player1+n1);
+                localStorage.setItem(p2,player2+n2);
+            }
+            
+
+        </script>
+    </body>
+
+</html>

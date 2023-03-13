@@ -1,0 +1,96 @@
+<html>
+
+<head>
+
+</head>
+<link rel="stylesheet" href="/css/register.css">
+
+<body>
+    <section>
+        <div class="container">
+            <div class="page">
+                <div class="sub-container">
+                    <div class="logo">
+
+
+
+                        <img src="/images/logo.svg" alt="">
+
+
+                    </div>
+                    <div class="welcome">
+                        <p>Welcome bick</p>
+                    </div>
+                    <div class="main">
+
+                        <form method="post" action="/register" id="form">
+                            <div class="label"><label for="name">Name</label></div>
+                            <div class="input"><input type="text" name="name" id="name"></div>
+                            <div class="label"><label for="email">email</label></div>
+                            <div class="input"><input type="text" name="name" id="em" onchange="emailvalidation(this.value)"></div>
+                            <div class="label"><label class="" name="em" id="em" for=""></label></div>
+                            <div class="label"><label for="name">Password</label></div>
+                            <div class="input"><input type="text" name="name" id="pwd"></div>
+                            <div class="label"> <label class="" name="ps" id="ps" for=""></label></div>
+
+                            <div class="label"><label for="name">Confirm Password</label></div>
+                            <div class="input"><input type="text" name="name" id="cpwd"></div>
+                            <div class="submit">
+                                <input type="submit" value="Sign Up" onclick="check(event)">
+                            </div>
+                        </form>
+                        <div class="sign-in-btn-content">
+                            <div class="sign-in-btn">
+                                <span class="main-btn-text">Already have an account?</span> <span class="sign-btn"><a href="/login">Sign in here</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="rightlogo">
+                    <img src="/images/bottom-logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        async function check(event) {
+            let pwd = document.getElementById('pwd').value;
+            let cpwd = document.getElementById('cpwd').value;
+            let ps = document.getElementById('ps');
+
+
+            if (pwd !== cpwd) {
+                ps.innerText = "password doesn't match";
+                event.preventDefault();
+                return false;
+
+            }
+
+
+
+        }
+
+        async function emailvalidation(email) {
+
+
+            const id = document.getElementById("em");
+            let sub = document.getElementById('submit');
+            const response = await fetch(`/validateUser/?email=${email}`);
+            const data = await response.json();
+            const status = data.status;
+            console.log(status);
+            if (status == false) {
+                id.innerHTML = "The email already exists";
+                sub.style.display = 'none';
+            } else if (status == true) {
+                id.innerHTML = "";
+                sub.style.display = 'block';
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

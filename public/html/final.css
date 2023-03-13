@@ -1,0 +1,329 @@
+body a {
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.logo {
+    padding-left: 100px;
+    padding-top: 12px;
+}
+
+.ul li {
+    padding-left: 40px;
+    font-size: 20px;
+    color: black;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-right: 50px;
+    color: black;
+}
+
+.click {
+    margin-right: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    color: blue;
+    text-decoration: none;
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+
+.txt_1 {
+    font-size: 50px;
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_right {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.cons1 {
+    text-decoration: none;
+    color: white;
+}
+
+.c1 {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.main1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wrk {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    position: relative;
+}
+
+.npw {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    position: relative;
+}
+
+.ser {
+    color: lightgreen;
+    font-weight: 600;
+    text-align: center;
+    font-size: 20px;
+}
+
+.ins {
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    font-size: x-large;
+}
+
+.we {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.main2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.life {
+    font-size: 18px;
+    font-weight: 100;
+    display: flex;
+    padding-left: 150px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.standard {
+    font-size: 18px;
+    font-weight: 100;
+    display: flex;
+}
+
+.reliable {
+    font-size: 18px;
+    font-weight: 100;
+    display: flex;
+    padding-right: 210px;
+}
+
+.btn2 {
+    border: 2px;
+    background-color: blue;
+    border-radius: 2px;
+    padding-left: 50px;
+    padding-inline: 20px;
+    margin-block-end: 20px;
+    color: white;
+}
+
+.icon9 {
+    width: 90px;
+    height: 90px;
+    margin-top: 80px;
+}
+
+.icon10 {
+    width: 90px;
+    height: 90px;
+    margin-top: 80px;
+}
+
+.icon11 {
+    width: 90px;
+    height: 90px;
+    margin-top: 112px;
+}
+
+.main4 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-weight: bold;
+}
+
+.home {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: left;
+    border: 1px silver;
+    margin: 0px 16px;
+    border-radius: 10px;
+}
+
+.ins {
+    padding-left: 90px;
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.main5 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.maincontent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.part1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.cons {
+    width: 200px;
+    background: blue;
+    margin-top: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    font-size: x-large;
+}
+
+.hi {
+    font-weight: bold;
+}
+
+.learn {
+    color: blue;
+    font-weight: bold;
+}
+
+.sec3 {
+    height: 680px;
+    width: 100%;
+    background-color: plum;
+    padding: 20px;
+}
+
+.white {
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 150px;
+}
+
+.con {
+    text-align: center;
+    margin: center;
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.Daniel {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.di {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.vc {
+    font-weight: 10px;
+    font-size: x-large;
+    margin-left: -12px;
+}
+
+.main5 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-weight: bold;
+    padding: 100px;
+    text-align: left;
+}
+
+.advocate {
+    margin-bottom: 10px;
+    padding-left: 5px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: left;
+    border: 1px silver;
+    margin: 0px 16px;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+}
+
+.bp {
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+.icon11 {
+    width: 50px;
+    height: 50px;
+}
+
+.ben {
+    color: green;
+}
+
+.right {
+    font-weight: bold;
+}
+
+.our {
+    color: rgb(174 174 195);
+}
+
+.green {
+    margin-left: 20px;
+    margin-top: 30px;
+}

@@ -1,0 +1,87 @@
+ <html>
+    <head> Form Validations</head>
+    <body>
+        
+        
+        <table border="1" align="center">
+        <form name="myform" action="url.html" onsubmit="return myValidate()"  method="post">
+            <tr>
+                <td><br>First Name:</td>
+                <td><input type="text" name="Fname" placeholder="mansi"><span id="fname"></span></td>
+            </tr>
+            <tr>
+                <td><br>Last Name:</td>
+                <td><input type="text" name="Lname" placeholder="kotak"><span id="lname"></span></td>
+            </tr>
+            <tr>
+                <td><br>Password:</td>
+                <td><input type="password" name="pwd"><span id="ps"></span></td>
+            </tr>
+            <tr>
+                <td><br>Address:</td>
+                <td><textarea name="add"></textarea></td>
+            </tr>
+            <tr>
+                <td><br>Mobile Number:</td>
+                <td><input type="text" name="num"><span id="3"></span></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <select multiple size="2">
+                        <option value="rajkot">Rajkot</option>
+                        <option value="ahmedabad">Ahmedabad</option>
+                        <option value="okha">Okha</option>
+                    </select>
+                </td>
+                
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit"></td>
+                <td><input type="reset" value="reset"></td>
+            </tr>
+        </form>
+        <label id="demo"></label> 
+        <script>
+            function myValidate()
+            {
+                let be=document.forms["myform"]["Fname"].value;
+                if (be == "")
+                {
+                    document.getElementById("fname").innerHTML="Please Fill The Name";
+                    return false;
+                }
+                let ln=document.forms["myform"]["Lname"].value;
+                if(ln=="")
+                {
+                    document.getElementById("lname").innerHTML="Required to fill";
+                    return false;
+
+                }
+                let pwd=document.forms["myform"]["pwd"].value;
+                if(pwd.length < 6)
+                {
+                    document.getElementById("ps").innerHTML="password is required and must be 6 characters long";
+                    return false;
+                }
+                
+                
+                let b=document.forms["myform"]["num"].value;
+                let text;
+                if (isNaN(b))
+                {
+                    document.getElementById("3").innerHTML = "It should only be a number";
+                    return false;
+                }
+                else{
+                    document.getElementById("3").innerHTML="Input is ok";
+                    return true;
+                }
+                
+                
+
+            }
+        </script>
+    </body>
+</table>
+ </html>

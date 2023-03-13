@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    basic events
+</head>
+
+<body id="3" onscroll="scrollevent()">
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem explicabo optio sit, amet in delectus
+        itaque ea quia quo placeat dolorem voluptates aliquid? Et dolorum quam reiciendis maiores aut odit quae, itaque,
+        commodi ratione ab unde eos consectetur labore quo nulla assumenda iste quaerat eius autem, excepturi a.
+        Provident culpa, architecto recusandae qui porro quam perspiciatis error, ipsum, ipsam reiciendis rem eligendi
+        expedita ut beatae iure asperiores laboriosam inventore? Laboriosam rerum voluptatem provident fuga deserunt!
+        Exercitationem, expedita debitis laudantium cupiditate possimus aspernatur unde minima assumenda ratione
+        accusamus illum commodi voluptatibus dolorem suscipit! Quod molestiae nam, cumque fugiat expedita reiciendis
+        temporibus beatae. Saepe, illo consectetur commodi consequatur natus doloremque exercitationem odio quo
+        reprehenderit repudiandae nobis ab itaque quia perspiciatis accusantium magni dolorum voluptates! Nobis nam
+        nostrum iusto beatae quis pariatur officiis qui ullam ratione. Exercitationem aut adipisci fugiat est
+        repudiandae illum asperiores ipsa, sit nemo! Excepturi, nulla veritatis. Quasi nesciunt exercitationem beatae
+        iste debitis? Facere fugit pariatur enim voluptates quam ex alias ad quasi vel fuga voluptatibus numquam quo
+        commodi iure aliquam quas perspiciatis, expedita obcaecati rerum quod magnam accusamus ipsam dolorem blanditiis.
+        Placeat, cupiditate minima rerum repudiandae expedita perferendis, maxime aliquid eveniet iusto commodi vel non
+        molestias deleniti vitae est harum. Earum veritatis nobis architecto quisquam ex ea blanditiis molestias eaque
+        dolores, temporibus iusto reprehenderit deleniti optio sapiente quam velit totam placeat soluta perspiciatis non
+        quo rerum ipsa? Laudantium aliquid aut nulla, magnam porro fugit accusamus consequuntur numquam nesciunt
+        exercitationem culpa fuga nihil optio officiis explicabo doloremque molestias aperiam? Accusantium provident
+        vero mollitia! Vitae, explicabo ducimus ad enim delectus, ratione optio impedit nobis obcaecati necessitatibus
+        saepe excepturi possimus maiores! Quisquam tenetur sit error modi culpa neque recusandae vero temporibus aliquam
+        libero earum, ut, consequuntur illum nam, sint quo in quidem facilis voluptate nemo eos repudiandae veniam odio
+        at? A totam, modi consequuntur beatae esse eligendi asperiores nihil error placeat odio! Possimus magnam in
+        aspernatur. Similique excepturi aliquam ipsa ex in itaque at aspernatur assumenda architecto distinctio iusto
+        harum molestiae dolore numquam ipsum commodi fugiat temporibus culpa aliquid totam doloribus, qui placeat optio.
+        Quisquam quasi tenetur quos cumque ea nostrum, iusto voluptas deleniti doloribus corporis qui nobis provident
+        explicabo neque minima quam delectus nesciunt consectetur. Dolorum ipsam libero facere numquam ipsa quia
+        perferendis esse dicta. Veritatis voluptates ullam expedita quae magni quaerat sed facilis nihil quos est
+        laboriosam eius, aspernatur et distinctio corporis in dolore id repudiandae tenetur eligendi quo. Consequatur
+        reprehenderit odio unde nostrum quaerat architecto quia aperiam alias aut, esse eveniet veniam natus velit
+        mollitia tempore error excepturi? Quae dicta praesentium quod est quam sit saepe deserunt commodi provident
+        asperiores maiores placeat autem voluptatum enim quibusdam doloremque, libero, natus rem corporis deleniti
+        aspernatur nam ut consequatur exercitationem? Accusantium vitae voluptas, debitis, asperiores maiores
+        voluptatibus ab neque in obcaecati ullam nisi cupiditate maxime porro quo nam eveniet numquam? Porro rerum
+        laudantium ratione necessitatibus modi, minus eos corrupti perferendis. Ipsa omnis asperiores temporibus, illo
+        nisi quibusdam laborum, fuga eum cupiditate unde accusamus porro, nam recusandae dignissimos maxime vel magnam
+        cum sequi?
+    </p>
+    <script language="javascript" type="text/javascript">
+        function clickevent() {
+            document.write("This is Click Event")
+        }
+        function mouseoverevent() {
+            alert("mouse is over me");
+        }
+        function mouseoutevent() {
+            alert("This is mouseout event");
+        }
+        function mousemoveevent() {
+            alert("Mousemove event");
+        }
+        function focusevent() {
+            document.getElementById("1").style.background = "black";
+        }
+        function blurevent() {
+            document.getElementById("2").style.color = "pink";
+        }
+        function scrollevent() {
+            document.getElementById("3").style.background = "green";
+        }
+    </script>
+    <input type="button" onclick="clickevent()" value="click me" />
+    <input type="button" onmouseover="mouseoverevent()" value="Keep mouse over me" />
+    <input type="button" onmouseout="mouseoutevent()" value="Remove Cursor from me" />
+    <input type="button" onmousemove="mousemoveevent()" value="Mouse is moved" />
+    <input type="text" id="1" onfocus="focusevent()" />
+    <input type="text" id="2" onblur="blurevent()" />
+
+</body>
+
+</html>

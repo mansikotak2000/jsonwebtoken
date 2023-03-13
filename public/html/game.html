@@ -1,0 +1,230 @@
+<html>
+    <head>
+        <style>
+            table{
+                border-color:black;
+            }
+            td {
+                
+                 height: 30px;
+                 width: 20px;
+                 
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <table border="1" align="center" id="table">
+            
+                <!-- <tr>
+                    <td id="1" onclick="clickevent1()" ondblclick="dblclickevent1()"></td>
+                    <td id="2" onclick="clickevent2()" ondblclick="dblclickevent2()"></td>
+                    <td id="3" onclick="clickevent3()" ondblclick="dblclickevent3()"></td>
+                </tr>
+                <tr>
+                    <td id="4" onclick="clickevent4()" ondblclick="dblclickevent4()"></td>
+                    <td id="5" onclick="clickevent5()" ondblclick="dblclickevent5()"></td>
+                    <td id="6" onclick="clickevent6()" ondblclick="dblclickevent6()"></td>
+                </tr>
+                <tr>
+                    <td id="7" onclick="clickevent7()" ondblclick="dblclickevent7()"></td>
+                    <td id="8" onclick="clickevent8()" ondblclick="dblclickevent8()"></td>
+                    <td id="9" onclick="clickevent9()" ondblclick="dblclickevent9()"></td>
+                </tr> -->
+            
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+        </table>
+        
+        <input type="button" name="btn" onclick="reset()" value="reset">
+        <script>
+            // function clickevent1()
+            // {
+            //     var mk1=document.getElementById("1");
+            //     mk1.innerHTML="0";
+            // }
+            // function clickevent2()
+            // {
+            //     var mk2=document.getElementById("2");
+            //     mk2.innerHTML="0";
+            // }
+            // function clickevent3()
+            // {
+            //     var mk3=document.getElementById("3");
+            //     mk3.innerHTML="0";
+            // }
+            // function clickevent4()
+            // {
+            //     var mk4=document.getElementById("4");
+            //     mk4.innerHTML="0";
+            // }
+            // function clickevent5()
+            // {
+            //     var mk5=document.getElementById("5");
+            //     mk5.innerHTML="0";
+            // }
+            // function clickevent6()
+            // {
+            //     var mk6=document.getElementById("6");
+            //     mk6.innerHTML="0";
+            // }
+            // function clickevent7()
+            // {
+            //     var mk7=document.getElementById("7");
+            //     mk7.innerHTML="0";
+            // }
+            // function clickevent8()
+            // {
+            //     var mk8=document.getElementById("8");
+            //     mk8.innerHTML="0";
+            // }
+            // function clickevent9()
+            // {
+            //     var mk9=document.getElementById("9");
+            //     mk9.innerHTML="0";
+            // }
+            // function dblclickevent1()
+            // {
+            //     var mk10=document.getElementById("1");
+            //     mk10.innerHTML="x";
+            // }
+            // function dblclickevent2()
+            // {
+            //     var mk11=document.getElementById("2");
+            //     mk11.innerHTML="x";
+            // }
+            // function dblclickevent3()
+            // {
+            //     var mk12=document.getElementById("3");
+            //     mk12.innerHTML="x";
+            // }
+            // function dblclickevent4()
+            // {
+            //     var mk13=document.getElementById("4");
+            //     mk13.innerHTML="x";
+            // }
+            // function dblclickevent5()
+            // {
+            //     var mk14=document.getElementById("5");
+            //     mk14.innerHTML="x";
+            // }
+            // function dblclickevent6()
+            // {
+            //     var mk15=document.getElementById("6");
+            //     mk15.innerHTML="x";
+            // }
+            // function dblclickevent7()
+            // {
+            //     var mk16=document.getElementById("7");
+            //     mk16.innerHTML="x";
+            // }
+            // function dblclickevent8()
+            // {
+            //     var mk17=document.getElementById("8");
+            //     mk17.innerHTML="x";
+            // }
+            // function dblclickevent9()
+            // {
+            //     var mk18=document.getElementById("9");
+            //     mk18.innerHTML="x";
+            // }
+
+            var flag=0;
+            var sign="x";
+            var mk=document.querySelectorAll("td");
+            mk.forEach((td)=>{
+                td.addEventListener("click",()=>{
+                    if(td.innerHTML=="" && flag==0){
+                        td.innerHTML="x";
+                        flag=1;
+                        check(sign);
+                        sign="0";
+                    }else if(td.innerHTML=="" && flag==1){
+                        td.innerHTML="0";
+                        flag=0;
+                        check(sign);
+                        sign="x";
+                    }
+                    
+                });
+            });
+
+            function check(sign){
+               if(mk[0].innerHTML==sign && mk[1].innerHTML==sign && mk[2].innerHTML==sign){
+                    alert(win(sign));
+               }
+               if(mk[0].innerHTML==sign && mk[3].innerHTML==sign && mk[6].innerHTML==sign){
+                    alert(win(sign));
+               }
+               if(mk[0].innerHTML==sign && mk[4].innerHTML==sign && mk[8].innerHTML==sign){
+                    alert(win(sign));
+                }
+               if(mk[1].innerHTML==sign && mk[5].innerHTML==sign && mk[7].innerHTML==sign){
+                    alert(win(sign));
+               }
+               if(mk[3].innerHTML==sign && mk[4].innerHTML==sign && mk[5].innerHTML==sign){
+                    alert(win(sign));
+               }
+               if(mk[2].innerHTML==sign && mk[4].innerHTML==sign && mk[6].innerHTML==sign){
+                    alert(win(sign));
+               }
+               if(mk[6].innerHTML==sign && mk[7].innerHTML==sign && mk[8].innerHTML==sign){
+                    alert(win(sign));
+               }
+               if(mk[0].innerHTML!="" && mk[1].innerHTML!="" && mk[2].innerHTML!="" &&mk[3].innerHTML!="" &&mk[04].innerHTML!="" &&mk[5].innerHTML!="" &&mk[6].innerHTML!="" &&mk[7].innerHTML!="" &&mk[8].innerHTML!="")
+               {
+                    alert("draw");
+               }
+            }
+
+            
+
+            function win(sign){
+                if(sign=="x"){
+                    return "player1 win";
+                }else{
+                    return "player2 win";
+
+                }
+                
+            }
+            function reset()
+            {
+                mk[0].innerHTML='';
+                mk[1].innerHTML='';
+                mk[2].innerHTML='';
+                mk[3].innerHTML='';
+                mk[4].innerHTML='';
+                mk[5].innerHTML='';
+                mk[6].innerHTML='';
+                mk[7].innerHTML='';
+                mk[8].innerHTML='';
+            }
+            
+        </script>   
+        
+        
+
+             
+    
+        
+    </body>
+</html>
+
+
+sudo chown mansi-kotak:mansi-kotak /var/run/docker.sock 

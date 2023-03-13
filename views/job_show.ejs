@@ -1,0 +1,130 @@
+<html>
+
+<head></head>
+
+<body>
+    <form method="post" action="/searching">
+
+        <tr>
+            <td>For Search Use '^' for name, '$' for lname, '#' for city, '~' for designation<br></td>
+        </tr>
+
+
+        <input type="text" name="txt" id="1">
+        <input type="submit" name="sub">
+
+
+
+        <table border="2">
+
+
+            <tr>
+                <th>cid</th>
+                <th>fname</th>
+
+                <th>lname</th>
+                <th>city</th>
+                <th>designation</th>
+                <th>email</th>
+                <th>state</th>
+                <th>Relationship Status</th>
+                <th>Gender</th>
+                <th>Number</th>
+
+                <th> </th>
+                <th></th>
+                <th>DeleteAll</th>
+
+
+            </tr>
+            <p><label style='color:red' onclick='deleteall()'>Delete selected</label></p>
+
+            <% for(const x of data){ %>
+                <tr>
+                    <td>
+                        <%= x.cid %>
+                    </td>
+                    <td>
+                        <%= x.fname %>
+                    </td>
+                    <td>
+                        <%= x.lname %>
+                    </td>
+
+                    <td>
+                        <%=x.city%>
+                    </td>
+                    <td>
+                        <%=x.designation%>
+                    </td>
+                    <td>
+                        <%=x.email%>
+                    </td>
+
+                    <td>
+                        <%=x.state%>
+                    </td>
+                    <td>
+                        <%=x.rel_status%>
+                    </td>
+                    <td>
+                        <%=x.gender %>
+                    </td>
+                    <td>
+                        <%=x.phone_no%>
+                    </td>
+
+                    <td>
+                        <a href="" onclick="isDelete('<%=x.cid%>')">Delete</a>
+                    </td>
+                    <td>
+                        <a href="edit/?cid=<%=x.cid %>">Edit</a>
+                    </td>
+                    <td><input class="delete" type="checkbox" name="deleteButton" id="('<%=x.cid %>')"></td>
+
+                </tr>
+                <% } %>
+
+
+
+        </table>
+    </form>
+
+    <script>
+        let checkall = document.querySelectorAll('input[type="checkbox"]');
+
+        async function deleteall() {
+
+            let checkarr = [];
+            for (i = 0; i < checkall.length; i++) {
+
+                if (checkall[i].checked) {
+
+                    checkarr.push(checkall[i].id);
+                }
+
+            }
+
+            if (confirm("Are you sure you want to delete")) {
+                for (i = 0; i < checkarr.length; i++) {
+                    await fetch(`/delete?cid=${checkarr[i]}`);
+                }
+            }
+        }
+
+
+        async function isDelete(student_id) {
+            console.log(student_id);
+            if (confirm("Are you sure you want to delete") == true) {
+                const query = await fetch(`/delete?cid=${student_id}`)
+            } else {
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

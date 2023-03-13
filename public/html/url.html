@@ -1,0 +1,16 @@
+<html>
+    <head>URL Property</head>
+    <title>Hello</title>
+    <p id="demo">
+    <p id="demo1"></p>
+    <input type="text" name="abc" value="anything" id="2">
+
+        <script>
+            let url=window.document.URL;
+            document.getElementById("demo").innerHTML=url;
+            let title=window.document.title;
+            document.getElementById("demo1").innerHTML=title;
+            let num=document.getElementById("2").attributes.length;
+            document.getElementById("demo").innerHTML=num;
+        </script>
+</html>

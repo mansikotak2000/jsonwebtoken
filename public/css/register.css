@@ -1,0 +1,82 @@
+    body {
+        background-image: url('/images/auth-bg.png');
+    }
+    
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+    
+    .page {
+        display: flex;
+        width: 100%;
+    }
+    
+    .sub-container {
+        width: 50%;
+        background-color: black;
+        color: white;
+        width: 500px;
+        height: 900px;
+    }
+    
+    .logo {
+        margin-left: 50px;
+        padding-top: 30px;
+    }
+    
+    .welcome {
+        margin-left: 50px;
+        margin-top: 50px;
+        font-size: x-large;
+    }
+    
+    .nm {
+        color: white;
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .rightlogo {
+        width: 50%;
+    }
+    
+    .rightlogo img {
+        bottom: 0;
+        right: 0;
+        margin-right: 200px;
+        margin-bottom: 50px;
+        position: absolute;
+    }
+    
+    .submit {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        height: 30px;
+    }
+    
+    .sign-in-btn-content {
+        margin-top: 80px;
+        margin-left: 50px;
+        font-size: 15px;
+    }
+    
+    .sign-btn a {
+        color: darkgoldenrod;
+    }
+    
+    .input input {
+        height: 30px;
+        margin-top: 25px;
+        width: 250px;
+        margin-left: 50px;
+    }
+    
+    .label {
+        padding-top: 30px;
+        margin-left: 50px;
+    }

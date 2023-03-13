@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if( activated == true) {%>
+        <h1>Your account is activated successfully.</h1>
+        <p>Login here <a href="/login">Login</a> </p>
+
+        <%}else{%>
+            <h1>Thank you for registration.</h1>
+
+            <h4>
+                please click this link to activate account
+            </h4>
+
+            <p>
+                <a href="/activate/?userId=<%=userID%>">
+                    Activate Account
+                </a>
+            </p>
+            <% } %>
+</body>
+
+</html>

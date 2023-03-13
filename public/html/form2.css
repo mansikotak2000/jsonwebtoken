@@ -1,0 +1,19 @@
+
+            td {color:darkslateblue;}
+              
+            body {
+                background-color: cornflowerblue;
+            } 
+            table {
+                background-color:darkkhaki;border-color: indianred;
+            }
+            
+            .center{
+                text-align: center;
+                color: crimson;
+                background-color: darkseagreen;
+            }
+            *{
+                color:blueviolet;
+            }
+        

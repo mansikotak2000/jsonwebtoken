@@ -1,0 +1,22 @@
+<svg width="611" height="644" viewBox="0 0 611 644" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Image" filter="url(#filter0_d_1_1293)">
+<path id="Shape" d="M562.571 268.976C565.981 161.314 540.244 97.0781 508.014 58.8637C475.793 20.6597 437.293 8.71215 415.648 5.21346C372.494 -1.76197 275.829 -1.67415 181.582 99.7702C134.502 150.446 108.044 206.035 107.63 263.238C107.216 320.464 132.869 378.973 189.347 435.459C246.186 492.306 337.808 504.682 415.945 475.959C494.186 447.199 559.144 377.16 562.571 268.976Z" fill="#E3E8EB" stroke="white" stroke-width="2.5"/>
+<mask id="mask0_1_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="105" y="0" width="460" height="493">
+<path id="Shape_2" d="M562.571 268.976C565.981 161.314 540.244 97.0781 508.014 58.8637C475.793 20.6597 437.293 8.71215 415.648 5.21346C372.494 -1.76197 275.829 -1.67415 181.582 99.7702C134.502 150.446 108.044 206.035 107.63 263.238C107.216 320.464 132.869 378.973 189.347 435.459C246.186 492.306 337.808 504.682 415.945 475.959C494.186 447.199 559.144 377.16 562.571 268.976Z" fill="white" stroke="white" stroke-width="2.5"/>
+</mask>
+<g mask="url(#mask0_1_1293)">
+<rect id="Bitmap" x="69" y="-184.5" width="576" height="864"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_1_1293" x="0.75" y="0.752197" width="609" height="641.994" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-20" dy="50"/>
+<feGaussianBlur stdDeviation="25"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1293"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1293" result="shape"/>
+</filter>
+</defs>
+</svg>

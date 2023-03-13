@@ -1,0 +1,166 @@
+<html>
+
+<head>
+    <style>
+        .loader {
+            width: 100px;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            visibility: hidden;
+        }
+        
+        .loader span {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 12px solid #bbb;
+            border-top: 12px solid #de4b4b;
+            animation: animate 1s linear infinite;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(270deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="loader" id="load">
+        <span></span>
+    </div>
+    <table border="2">
+        <tr>
+            <th>cid</th>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>designation</th>
+            <th>gender</th>
+            <th>email</th>
+            <th>city</th>
+            <th>Phone Number</th>
+        </tr>
+        <tbody id="clear">
+
+            <% for(const x of data){ %>
+                <tr>
+                    <td>
+                        <%= x.cid %>
+                    </td>
+                    <td>
+                        <%= x.fname %>
+                    </td>
+                    <td>
+                        <%= x.lname %>
+                    </td>
+                    <td>
+                        <%= x.designation %>
+                    </td>
+                    <td>
+                        <%= x.gender %>
+                    </td>
+                    <td>
+                        <%= x.email %>
+                    </td>
+                    <td>
+                        <%= x.city %>
+                    </td>
+                    <td>
+                        <%= x.phone_no %>
+                    </td>
+                </tr>
+                <% } %>
+                    <tr>
+
+                        <%  for(let i=1;i<=a+1;i++) { %>
+
+
+                            <label id="<%=i%>" style='color:red' onclick="fetchX(this)">
+                            <%=i %>
+                        </label>
+
+                            <%}%>
+                    </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let id = document.getElementById('cid');
+        let fname = document.getElementById('fname');
+        let lname = document.getElementById('lname');
+        let designation = document.getElementById('designation');
+        let gender = document.getElementById('gender');
+        let email = document.getElementById('email');
+        let city = document.getElementById('city');
+        let phone_no = document.getElementById('phone_no');
+
+
+
+        let bodyfetch = document.getElementById('clear');
+
+        async function fetchX(fet) {
+
+            load = document.getElementById('load');
+            load.style.visibility = 'visible';
+
+            console.log(fet.id);
+            let res = await fetch(`/firstres?no=${fet.id}`)
+            let data = await res.json();
+            console.log(data);
+
+            bodyfetch.innerHTML = '';
+            load.style.visibility = 'hidden';
+
+            data.result.forEach(element => {
+                bodyfetch.innerHTML += `<tr>
+                    <td>
+                        ${element.cid}
+                    </td>
+                    <td>
+                        ${element.fname}
+                    </td>
+                    <td>
+                        ${element.lname}
+                    </td>
+                    <td>
+                        ${element.designation}
+                    </td>
+                    <td>
+                        ${element.gender}
+                    </td>
+                    <td>
+                        ${element.email}
+                    </td>
+                    <td>
+                        ${element.city}
+                    </td>
+                    <td>
+                        ${element.phone_no}
+                    </td>
+                    </tr>`
+
+            });
+
+        }
+    </script>
+
+
+</body>
+
+</html>

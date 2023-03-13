@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <style>
+            table {
+               
+                border-color:black;
+                
+                 }
+            td{
+                
+                height: 100px;
+                width:100px;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <table border="1" align="center">
+            <tr>
+                <td id="1" ></td>
+                <td id="2" ></td>
+                <td id="3" ></td>
+            </tr>
+            <tr>
+                <td id="4" ></td>
+                <td id="5" ></td>
+                <td id="6" ></td>
+            </tr>
+            <tr>
+                <td id="7" ></td>
+                <td id="8" ></td>
+                <td id="9" ></td>
+            </tr>
+        </table>
+        <script>
+            const allTd=[...document.querySelectorAll('table td')];
+
+            const table=document.querySelector('table');
+
+            let counter=3;
+            
+            getRandomColor();
+
+            function getRandomColor(){
+
+                let r=getRandomValue(1,180);
+                let g=getRandomValue(1,180);
+                let b=getRandomValue(1,180);
+
+                let a=1;
+
+                const allTd=document.querySelectorAll('td');
+
+                allTd.forEach(td=>{
+                    td.style.backgroundColor=`rgba(${r},${g},${b},${a})`;
+                });
+
+                let lengthTd=allTd.length-1;
+
+                let randomIndex=getRandomValue(0,lengthTd);
+
+                allTd[randomIndex].style.backgroundColor=`rgba(${r},${g},${b},${0.5})`;
+
+                allTd[randomIndex].addEventListener('click',generateTable);
+
+
+
+            }
+
+            function getRandomValue(min,max){
+                return Math.floor(Math.random()*(max-min)+min);
+                
+            }
+
+            function generateTable(){
+
+                counter++;
+
+                let tableStr="";
+
+                for (let row = 0; row < counter; row++) {
+
+                    tableStr+="<tr>"
+                    for (let col = 0; col < counter; col++) {
+                        tableStr+="<td></td>"
+                        
+                    }
+                    tableStr+="</tr>"
+                    
+                }
+
+                table.innerHTML=tableStr;
+                getRandomColor();
+
+
+
+
+            }
+
+        </script>
+        
+    </body>
+</html>

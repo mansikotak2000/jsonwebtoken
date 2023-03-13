@@ -1,0 +1,378 @@
+<html>
+<h1>JOB APPLICATION</h1>
+
+
+<body>
+    <form method="post" action="/update">
+        <input type="hidden" name="id" value="<%= data[0].cid %>">
+        <div id="personal_info">
+
+            <fieldset>
+                <legend class="l1">Basic info</legend>
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" name="fname" id="1" value="<%= data[0].fname %>"></td>
+                        <td>Last Name:</td>
+                        <td><input type="text" name="lname" id="2" value="<%= data[0].lname %>"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Designation:</td>
+                        <td><input type="text" name="designation" value="<%= data[0].designation %>" id="3"></td>
+                        <td>Address</td>
+                        <td><textarea name="txt" id="4" value="<%= data[0].address %>"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>email:</td>
+                        <td><input type="email" name="email" value="<%= data[0].email %>" id="5"></td>
+                        <td>City:</td>
+                        <td>
+                            <select name="city" id="city">
+
+<%for(const x of getcities){%>
+
+    <%if(x.city_name == scity){%>
+    <option value="" selected><%= x.city_name%></option>
+  <%  }else{%>
+        <option value=""><%= x.city_name%></option>
+<%}}%>
+
+
+
+                            </select>
+                        </td>
+
+
+
+
+
+                        <td>State:</td>
+                        <td><select name="state" onchange="fetchCity(this)">
+<%= stateid%>
+                            <% for(const st of states){%>
+                                <% if(stateid==st.name){ %>
+                                    <option value="<%=st.state_id%>" selected><%=st.name%></option>
+                                    <% }else{ %>
+                                    <option value="<%=st.state_id%>"><%=st.name%></option>
+                           <%} }%>
+                        </td>
+                        
+
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td><input type="number" name="Number" value="<%= data[0].phone_no %>" id="7"></td>
+
+
+
+                    </tr>
+
+                    <tr>
+                       <td>Gender:</td>
+                       <td>
+                        <% for(i=0;i<gender.length;i++){%>
+                            <input type="radio" name="Gender" value="<%=gender[i]%>"
+                            <%if(gender[i]==data[0].gender){%>checked
+                           <% }%>>
+                           <%=gender[i]%>
+                           
+                            <%}%>
+                       </td>
+                    </tr>
+                    <tr>
+                        <td>Relationship Status:</td>
+                        <td>
+                            <% for(i=0;i<rel_status.length;i++){%>
+                                <input type="radio" name="Status" value="<%=rel_status[i]%>"
+                                <%if(rel_status[i]==data[0].rel_status){%>checked
+                               <% }%>>
+                               <%=rel_status[i]%>
+                               
+                                <%}%>
+                        </td>
+                    </tr>
+
+                   
+                    
+
+                </table>
+            </fieldset>
+
+        </div>
+        <td><input type="submit" value="update"></td>
+        <div id="education info">
+            <fieldset>
+                <legend class="l1">Education Details</legend>
+                <table id="edb">
+
+
+                    <tr>
+                        <td class="edu">COURSE</td>
+                        <td><input type="button" value="ADD +" id="cb" onclick="clickevent1()" ></td>
+
+                    </tr>
+                    <% for (const x of coursename) { %>
+                    <tr id="c1">
+
+
+
+                        <td>COURSE:</td>
+                        <td>
+                                <select name="course" id="">
+
+
+                                    <% for(const st of getcourse){%>
+                                        <% if(x.course==st.oname){ %>
+                                            <option value="<%= x.course%>" selected>    <%= x.course%></option>
+                                            <% }else{ %>
+                                            <option value="<%=st.oname%>"><%=st.oname%></option>
+                                   <%} }%>
+
+
+
+
+                            </select>
+                            <td class="course">Board/University:</td>
+                            <td><input type="text" name="un" id="un" value="<%= x.board %>"></td>
+                            <td class="course">Passing Year:</td>
+                            <td><input type="text" name="bpy" id="bpy" value="<%= x.pyear %>"></td>
+                            <td class="course">Percentage:</td>
+                            <td><input type="text" name="bper" id="bper" value="<%= x.per%>"></td>
+                        </td>
+
+                    </tr>
+                    <% } %>
+                </table>
+
+            </fieldset>
+        </div>
+        <div id="work experience">
+            <fieldset>
+                <legend class="l1">Work Experience</legend>
+                <table id="we">
+
+
+                    <tr>
+                        <td>MORE:</td>
+                        <td><input type="button" value="ADD +" id="more" onclick="clickevent2()"></td>
+                    </tr>
+                    <tr id="company">
+                        <td>Company Name:</td>
+                        <td><input type="textbox" name="cname2" id="cname2" value="<%= data2[0].cname %>"></td>
+
+                        <td>Designation:</td>
+                        <td><input type="textbox" name="dname2" id="dname2" value="<%= data2[0].designation %>"></td>
+
+                        <td>From:</td>
+                        <td><input type="date" name="from" value="<%= data2[0].start_date %>"></td>
+                        <td>To:</td>
+                        <td><input type="date" name="to" value="<%= data2[0].end_date %>"></td>
+
+                    </tr>
+
+
+                </table>
+            </fieldset>
+
+        </div>
+        <div id="reference">
+            <fieldset>
+                <legend class="l1">Reference Contact</legend>
+                <table>
+                    <tr>
+                        <td>Name1:</td>
+                        <td><input type="textbox" name="nm1" id="nm1" value="<%= data3[0].name %>"></td>
+                        <td>Contact Number:</td>
+                        <td><input type="textbox" name="cn1" id="cn1" value="<%= data3[0].cno %>"></td>
+                        <td>Relation:</td>
+                        <td><input type="textbox" name="r1" id="r1" value="<%= data3[0].relation %>"></td>
+
+                    </tr>
+
+                </table>
+            </fieldset>
+        </div>
+        <div id="preference">
+            <% for(const pef of preference){%>
+                <fieldset>
+                    <legend class="l1">Preferences</legend>
+                    <table>
+                        <tr>
+                            <td>Notice Period:</td>
+                            <td><input type="text" name="np" id="np" value="<%= pef.n_period%>"></td>
+                            <td>Preferred Location:</td>
+                            <td>
+                                <select name="pref_location">
+                                       
+                                
+                                    <% for(const pre of prelocation){%>
+                                    <% if(pef.p_location==pre.oname){ %>
+                                        <option value="<%= pre.oname%>" selected>    <%= pre.oname%></option>
+                                        <% }else{ %>
+                                        <option value="<%=pre.oname%>"><%=pre.oname%></option>
+                               <%}} %>
+
+                                        </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Expected CTC:</td>
+                            <td><input type="text" name="ectc" id="ectc" value="<%= pef.e_ctc%>"></td>
+                            <td>Department:</td>
+
+                            <td>
+                                <select name="department">
+                                    <% for(const de of predept){%>
+                                        <%if(pef.department==de.oname){%>
+                                            <option value="<%=de.oname%>" selected><%=de.oname%></option>
+                                        <%}else{%>
+                                        <option value="<%=de.oname%>"><%=de.oname %></option>
+                                        
+                                    <%}} %>
+                                </select>
+                            </td>
+
+
+
+
+                        </tr>
+                        <tr>
+                            <td>Current CTC:</td>
+                            <td><input type="text" name="cctc" id="cctc" value="<%= pef.c_ctc%>"></td>
+                        </tr>
+
+                    </table>
+
+                </fieldset>
+                <%}%>
+        </div>
+
+        <div id="language">
+            <fieldset>
+                <legend class="l3">Languages Known</legend>
+                <table>
+
+                    <% for(const x of langquery){%>
+                        <%= x.language_know %> print this
+                            <tr>
+                                <td><input type="checkbox" name="chk_languages" value="<%=x.language_know %>" checked>
+                                    <%=x.language_know %>
+
+                                </td>
+                                <%if(x.r_read=='Y'){%>
+                                    <td><input type="checkbox" name="<%=x.language_know %>" value="Read" checked>Read</td>
+                                    <%}else{%>
+                                        <td><input type="checkbox" name="<%=x.language_know %>" value="Read">Read</td>
+
+                                        <% }%>
+
+                                            <%if(x.w_write=='Y'){%>
+                                                <td><input type="checkbox" name="<%=x.language_know %>" value="write" checked>Write</td>
+                                                <%}else{%>
+                                                    <td><input type="checkbox" name="<%=x.language_know %>" value="write">Write</td>
+
+                                                    <% }%>
+
+                                                        <%if(x.s_speak=='Y'){%>
+                                                            <td><input type="checkbox" name="<%=x.language_know %>" value="speak" checked>Speak</td>
+                                                            <%}else{%>
+                                                                <td><input type="checkbox" name="<%=x.language_know %>" value="speak">Speak</td>
+
+                                                                <% }%>
+
+
+                            </tr>
+
+
+                            <%  } %>
+
+
+                </table>
+        </div>
+
+        <div id="technologies">
+            <fieldset>
+                <legend class="l1">Technologies you know</legend>
+                <table>
+
+                    <% for(const x of techquery){%>
+                        <tr>
+                            <td><input type="checkbox" name="technology" value="<%=x.tech_name %>" checked>
+                                <%=x.tech_name %>
+
+                            </td>
+                            <%if(x.beginner=='Y'){%>
+                                <td><input type="radio" name="<%=x.tech_name %>" value="Beginner" checked>Beginner</td>
+                                <%}else{%>
+                                    <td><input type="radio" name="<%=x.tech_name %>" value="Beginner"> Beginner</td>
+
+                                    <% }%>
+
+                                        <%if(x.moderate=='Y'){%>
+                                            <td><input type="radio" name="<%=x.tech_name %>" value="Mideator" checked>Moderate</td>
+                                            <%}else{%>
+                                                <td><input type="radio" name="<%=x.tech_name %>" value="Mideator"> Moderate</td>
+
+                                                <% }%>
+
+                                                    <%if(x.expert=='Y'){%>
+                                                        <td><input type="radio" name="<%=x.tech_name %>" value="Expert" checked>Expert</td>
+                                                        <%}else{%>
+                                                            <td><input type="radio" name="<%=x.tech_name %>" value="Expert">Expert</td>
+
+                                                            <% }%>
+
+
+                        </tr>
+
+
+                        <%  } %>
+                </table>
+        </div>
+        </fieldset>
+
+        </div>
+
+    </form>
+
+    <script>
+        function clickevent1() {
+            const mk = document.getElementById("c1");
+            const mk1 = mk.cloneNode(true);
+            document.getElementById("edb").appendChild(mk1);
+
+        }
+
+        function clickevent2() {
+            const mk = document.getElementById("company");
+            const mk1 = mk.cloneNode(true);
+            document.getElementById("we").appendChild(mk1);
+
+        }
+
+
+
+
+
+        let city = document.getElementById('city');
+        async function fetchCity(s_id) {
+
+            let name = s_id.value;
+            let url = `/test?state=${name}`;
+            let response = await fetch(url);
+            let data = await response.json();
+
+            city.innerHTML = '';
+            data.city.forEach(element => {
+
+                city.innerHTML += `<option value='${element.city_name}'> ${element.city_name}<option>`
+            });
+
+        }
+    </script>
+
+</body>
+
+</html>
